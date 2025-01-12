@@ -40,7 +40,7 @@ abstract class AppRoutes {
   static const String ROUTINEALL = "/routine-all";
   static const String ROUTINEFILTER = "/routine-filter";
   static const String NEWBUDGET = "/new-budget";
-  static const String BUDGETHISTORY = "/budget-history";
+  static const String BUDGET = "/budget";
   static const String BUDGETLIST = "/budget-list";
   static const String BUDGETFULL = "/budget-full";
   static const String BUDGETALL = "/budget-all";
@@ -64,6 +64,7 @@ abstract class AppRoutes {
   static const String ALERTNOTIFICATION = "/alert-notification";
   static const String LOCALAUTH = "/auth";
 
+  static const String TRANSFERS = "/transfers";
   static const String NEWTRANSFER = "/transfer";
   static const String EDITTRANSFER = "/transfer-edit";
   static const String TRANSFERDETAIL = "/transfer-detail";

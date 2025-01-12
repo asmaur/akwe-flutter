@@ -1,12 +1,20 @@
-import 'package:akwe/src/ui/pages/account/account_page_view.dart';
-import 'package:akwe/src/ui/pages/account/account_page_view_binding.dart';
-import 'package:akwe/src/ui/pages/category/category_page_view.dart';
-import 'package:akwe/src/ui/pages/category/category_page_view_binding.dart';
+import 'package:akwe/src/ui/pages/account/account_page.dart';
+import 'package:akwe/src/ui/pages/account/account_page_binding.dart';
+import 'package:akwe/src/ui/pages/budget/budget_page.dart';
+import 'package:akwe/src/ui/pages/budget/budget_page_binding.dart';
+import 'package:akwe/src/ui/pages/category/category_page.dart';
+import 'package:akwe/src/ui/pages/category/category_page_binding.dart';
+import 'package:akwe/src/ui/pages/fund/fund_binding.dart';
+import 'package:akwe/src/ui/pages/fund/fund_page.dart';
+import 'package:akwe/src/ui/pages/goal_new/new_goal_page.dart';
+import 'package:akwe/src/ui/pages/goal_new/new_goal_page_binding.dart';
 import 'package:akwe/src/ui/pages/home/home.dart';
-import 'package:akwe/src/ui/pages/qr_code_found/qr_code_found_page_view.dart';
-import 'package:akwe/src/ui/pages/qr_code_found/qr_code_found_page_view_binding.dart';
-import 'package:akwe/src/ui/pages/scanner/scanner_page_view.dart';
-import 'package:akwe/src/ui/pages/scanner/scanner_page_view_binding.dart';
+import 'package:akwe/src/ui/pages/qr_code_found/qr_code_found_page.dart';
+import 'package:akwe/src/ui/pages/qr_code_found/qr_code_found_page_binding.dart';
+import 'package:akwe/src/ui/pages/scanner/scanner_page.dart';
+import 'package:akwe/src/ui/pages/scanner/scanner_page_binding.dart';
+import 'package:akwe/src/ui/pages/transfer/transfer_page.dart';
+import 'package:akwe/src/ui/pages/transfer/transfer_page_binding.dart';
 import 'package:get/get.dart';
 import 'package:akwe/src/ui/pages/dashboard/dashboard.dart';
 import 'package:akwe/src/ui/pages/dashboard/dashboard_binding.dart';
@@ -60,19 +68,19 @@ class AppPages {
     //     binding: PremiumBinding()),
     GetPage(
       name: AppRoutes.USERCATEGORY,
-      page: () => CategoryPageView(),
-      binding: CategoryPageViewBinding(),
+      page: () => CategoryPage(),
+      binding: CategoryPageBinding(),
     ),
     GetPage(
       name: AppRoutes.USERACCOUNT,
-      page: () => AccountPageView(),
-      binding: AccountPageViewBinding(),
+      page: () => AccountPage(),
+      binding: AccountPageBinding(),
     ),
-    // GetPage(
-    //   name: Routes.USERFUNDS,
-    //   page: () => const FundPage(),
-    //   binding: FundBinding(),
-    // ),
+    GetPage(
+      name: AppRoutes.USERFUNDS,
+      page: () => const FundPage(),
+      binding: FundBinding(),
+    ),
     // GetPage(
     //   name: Routes.USERMETRICS,
     //   page: () => const MetricPage(),
@@ -154,13 +162,13 @@ class AppPages {
     //   fullscreenDialog: true,
     // ),
     //
-    // GetPage(
-    //   name: Routes.BUDGETHISTORY,
-    //   page: () => const BudgetDetailPage(),
-    //   binding: BudgetDetailBinding(),
-    //   transition: Transition.downToUp,
-    //   fullscreenDialog: true,
-    // ),
+    GetPage(
+      name: AppRoutes.BUDGET,
+      page: () => const BudgetPage(),
+      binding: BudgetPageBinding(),
+      transition: Transition.downToUp,
+      fullscreenDialog: true,
+    ),
     // GetPage(
     //   name: Routes.BUDGETLIST,
     //   page: () => const BudgetListPage(),
@@ -209,14 +217,14 @@ class AppPages {
     //
     GetPage(
         name: AppRoutes.SCANQRCODE,
-        page: () => ScannerPageView(),
+        page: () => ScannerPage(),
         binding: ScannerPageViewBinding(),
         transition: Transition.downToUp,
         fullscreenDialog: true,
     ),
     GetPage(
       name: AppRoutes.QRCODEFOUND,
-      page: () => const QrCodeFoundPageView(),
+      page: () => const QrCodeFoundPage(),
       binding: QrCodeFoundPageViewBinding(),
       transition: Transition.downToUp,
       fullscreenDialog: true,
@@ -292,12 +300,12 @@ class AppPages {
     //   binding: GoalBinding(),
     //   transition: Transition.fadeIn,
     // ),
-    // GetPage(
-    //   name: Routes.NEWUSERGOAL,
-    //   page: () => const NewGoalPage(),
-    //   binding: NewGoalBinding(),
-    //   transition: Transition.downToUp,
-    // ),
+    GetPage(
+      name: AppRoutes.NEWUSERGOAL,
+      page: () => NewGoalPage(),
+      binding: NewGoalPageBinding(),
+      transition: Transition.downToUp,
+    ),
     // GetPage(
     //   name: Routes.ADDDEPOSITTOGOAL,
     //   page: () => const GoalDepositPage(),
@@ -335,6 +343,12 @@ class AppPages {
     //   binding: NewTransferBinding(),
     //   transition: Transition.downToUp,
     // ),
+    GetPage(
+      name: AppRoutes.TRANSFERS,
+      page: () => TransferPage(),
+      binding: TransferPageBinding(),
+      transition: Transition.downToUp,
+    ),
     //
     // GetPage(
     //   name: Routes.EDITTRANSFER,

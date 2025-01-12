@@ -71,6 +71,7 @@ const userAccountType019 = "userAccountType019";
 const userAccountType021 = "userAccountType021";
 const userAccountType023 = "userAccountType023";
 const userAccountType025 = "userAccountType025";
+const userAccountType027 = "userAccountType027";
 
 
 const userAccountName = "userAccountName";

@@ -1,15 +1,27 @@
 import 'package:akwe/src/constants/app_colors.dart';
 import 'package:akwe/src/constants/app_layout.dart';
+import 'package:akwe/src/models/budgets/budget.dart';
 import 'package:flutter/material.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 
 class BalanceCard extends StatelessWidget {
-  const BalanceCard({super.key});
+  BalanceCard({super.key, required this.budget});
+  final locale = Get.deviceLocale;
+  final Budget budget;
 
   @override
   Widget build(BuildContext context) {
+
+    final currency = NumberFormat.currency(
+      locale: locale?.languageCode,
+      symbol: NumberFormat.simpleCurrency(locale: locale?.languageCode)
+          .currencySymbol,
+      decimalDigits: 2,
+    );
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
@@ -47,7 +59,7 @@ class BalanceCard extends StatelessWidget {
                               // width: 250,
                               // color: Colors.yellow,
                               child: Text(
-                                "R\$ 1.500.660,87",
+                                currency.format(budget.balance),
                                 style: TextStyle(
                                   fontSize: 29,
                                   fontWeight: FontWeight.bold,

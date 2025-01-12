@@ -124,6 +124,7 @@ class FloatingMenuBottons extends StatelessWidget {
                 if (state != null) {
                   state.toggle();
                 }
+                Get.toNamed(AppRoutes.NEWUSERGOAL);
               },
               backgroundColor: AppColors.appBlue,
               child: Icon(Icons.flag_outlined),

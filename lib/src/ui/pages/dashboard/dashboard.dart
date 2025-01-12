@@ -2,12 +2,12 @@ import 'package:akwe/src/constants/app_colors.dart';
 import 'package:akwe/src/constants/app_layout.dart';
 import 'package:akwe/src/routes/app_pages.dart';
 import 'package:akwe/src/ui/pages/dashboard/dashboard_controller.dart';
-import 'package:akwe/src/ui/pages/goal/goal_page_view.dart';
+import 'package:akwe/src/ui/pages/goal/goal_page.dart';
 import 'package:akwe/src/ui/pages/home/home.dart';
-import 'package:akwe/src/ui/pages/planning/planning_page_view.dart';
-import 'package:akwe/src/ui/pages/scanner/scanner_page_view.dart';
-import 'package:akwe/src/ui/pages/search/search_page_view.dart';
-import 'package:akwe/src/ui/pages/transaction/transaction_page_view.dart';
+import 'package:akwe/src/ui/pages/planning/planning_page.dart';
+import 'package:akwe/src/ui/pages/scanner/scanner_page.dart';
+import 'package:akwe/src/ui/pages/search/search_page.dart';
+import 'package:akwe/src/ui/pages/transaction/transaction_page.dart';
 import 'package:akwe/src/ui/widgets/components/floating_menu_bottons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
@@ -77,10 +77,10 @@ class DashBoard extends StatelessWidget {
               index: _controller.tabIndex,
               children: [
                 HomeView(),
-                TransactionPageView(),
-                PlanningPageView(),
-                GoalPageView(),
-                SearchPageView()
+                TransactionPage(),
+                PlanningPage(),
+                GoalPage(),
+                SearchPage()
               ],
             ),
           ),

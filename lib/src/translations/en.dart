@@ -107,6 +107,7 @@ class En {
         translation.userAccountType021: "Food Stamp",
         translation.userAccountType023: "Meal ticket",
         translation.userAccountType025: "Current account",
+        translation.userAccountType027: "Debit",
         translation.userAccountName: "Account name",
         translation.userAccountDescription: "Description",
         translation.userAccountAccountTypeText: "Account type",
@@ -546,7 +547,7 @@ class En {
     translation.appPremiumYearlyText: "Yearly plan",
 
     translation.appRecomendLabelText: "Recomends",
-    translation.appMonthBudgetTitle: "Budget for Current month",
+    translation.appMonthBudgetTitle: "Budget for @monthName",
     translation.appMonthBudgetSettedDate: "Setted up: @date",
     translation.appSavingGoalTitle: "Create a saving goal",
     translation.appSavingGoalSubTitle: "Build Your Dreams",

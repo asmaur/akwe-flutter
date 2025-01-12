@@ -1,0 +1,42 @@
+getInvoiceHost(){
+  return [
+    'www.sefaz.rs.gov.br',
+    'www4.fazenda.rj.gov.br',
+    'www.fazenda.rj.gov.br',
+    'www.nfe.sefaz.ba.gov.br',
+    'nfe.sefaz.ba.gov.br',
+    'nfce.fazenda.sp.gov.br',
+    'www.nfce.fazenda.sp.gov.br',
+    'ww1.receita.fazenda.df.gov.br',
+
+    'www.sefaznet.ac.gov.br/nfce/consulta',
+    'www.sefaz.al.gov.br/nfce/consulta',
+  	'www.sefaz.ap.gov.br/nfce/consulta',
+    'www.sefaz.am.gov.br/nfce/consulta',
+  	'www.sefaz.ce.gov.br/nfce/consulta',
+    'www.fazenda.df.gov.br/nfce/consulta',
+    'www.sefaz.es.gov.br/nfce/consulta',
+    'www.sefaz.go.gov.br/nfce/consulta',
+    'www.sefaz.ma.gov.br/nfce/consulta',
+    'www.dfe.ms.gov.br/nfce/consulta',
+    'www.sefa.pa.gov.br/nfce/consulta',
+    'www.fazenda.pr.gov.br/nfce/consulta',
+    'www.nfce.sefaz.pe.gov.br/nfce/consulta',
+    'www.sefaz.pi.gov.br/nfce/consulta',
+    'www.fazenda.rj.gov.br/nfce/consulta',
+    'www.set.rn.gov.br/nfce/consulta',
+    'www.sefaz.rs.gov.br/nfce/consulta',
+    'www.sefin.ro.gov.br/nfce/consulta',
+    'www.sefaz.rr.gov.br/nfce/consulta',
+
+
+    'www.sefaz.ba.gov.br/nfce/consulta',
+    'www.nfce.fazenda.mg.gov.br/portalnfce',
+    'www.sefaz.mt.gov.br/nfce/consultanfce',
+    'www.sefaz.pb.gov.br/nfce/consulta',
+    'www.sat.sef.sc.gov.br/nfce/consulta',
+    'www.nfce.fazenda.sp.gov.br/consulta',
+    'www.nfce.se.gov.br/nfce/consulta',
+    'www.sefaz.to.gov.br/nfce/consulta',
+  ];
+}

@@ -3,7 +3,7 @@ import 'package:akwe/src/constants/app_layout.dart';
 import 'package:akwe/src/routes/app_pages.dart';
 import 'package:akwe/src/ui/pages/dashboard/dashboard_controller.dart';
 import 'package:akwe/src/ui/pages/home/home.dart';
-import 'package:akwe/src/ui/pages/scanner/scanner_page_view.dart';
+import 'package:akwe/src/ui/pages/scanner/scanner_page.dart';
 import 'package:flutter/material.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
 import 'package:get/get.dart';
@@ -145,19 +145,19 @@ class AppDrawerMobile extends StatelessWidget {
           iconData: Icons.savings_outlined,
           label: translation.appDrawerFundsText.tr,
           selected: false,
-          onTap: () => {},
+          onTap: () => {Get.toNamed(AppRoutes.USERFUNDS)},
         ),
         DrawerNavigationItem(
           iconData: Icons.money_outlined,
           label: translation.appDrawerBudgetText.tr,
           selected: false,
-          onTap: () => {},
+          onTap: () => {Get.toNamed(AppRoutes.BUDGET)},
         ),
         DrawerNavigationItem(
           iconData: Icons.sync_alt_outlined,
           label: translation.bottomBarTransferText.tr,
           selected: false,
-          onTap: () => {},
+          onTap: () => {Get.toNamed(AppRoutes.TRANSFERS)},
         ),
         DrawerNavigationItem(
           iconData: Icons.bar_chart_outlined,

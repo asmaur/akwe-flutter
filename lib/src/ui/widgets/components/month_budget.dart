@@ -1,14 +1,26 @@
 import 'package:akwe/src/constants/app_colors.dart';
 import 'package:akwe/src/constants/app_layout.dart';
+import 'package:akwe/src/models/budgets/budget.dart';
 import 'package:flutter/material.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
 import 'package:get/get.dart';
+import 'package:in_date_utils/in_date_utils.dart';
+import 'package:intl/intl.dart';
 
 class MonthBudget extends StatelessWidget {
-  const MonthBudget({super.key});
+  MonthBudget({super.key, required this.budget});
+  final Budget budget;
+  final locale = Get.deviceLocale;
 
   @override
   Widget build(BuildContext context) {
+    final currency = NumberFormat.currency(
+      locale: locale?.languageCode,
+      symbol: NumberFormat.simpleCurrency(locale: locale?.languageCode)
+          .currencySymbol,
+      decimalDigits: 2,
+    );
+
     return Column(
       children: [
         Center(
@@ -40,7 +52,10 @@ class MonthBudget extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.all(12.0),
                       child: Text(
-                        translation.appMonthBudgetTitle.tr,
+                        translation.appMonthBudgetTitle.trParams({
+                          "monthName": DateFormat.MMMM(Get.locale?.languageCode)
+                              .format(budget.creationDate!),
+                        }),
                         style: TextStyle(
                           color: AppColors.appWhite,
                           fontSize: 14,
@@ -63,7 +78,7 @@ class MonthBudget extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.all(8.0),
                   child: Text(
-                    "R\$ 15.000,23",
+                    currency.format(budget.initialBalance),
                     style: TextStyle(
                       color: AppColors.appWhite,
                       fontSize: 18,
