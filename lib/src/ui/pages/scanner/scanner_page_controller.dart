@@ -1,6 +1,6 @@
 import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
+import 'package:akwe/src/translations/translation_keys.dart' as translation;
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 

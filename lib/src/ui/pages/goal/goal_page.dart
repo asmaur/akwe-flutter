@@ -1,4 +1,5 @@
 import 'package:akwe/src/constants/app_colors.dart';
+import 'package:akwe/src/routes/app_pages.dart';
 import 'package:akwe/src/ui/widgets/app_drawer/app_drawer_mobile.dart';
 import 'package:akwe/src/ui/widgets/components/goal_tile.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class GoalPage extends StatelessWidget {
             ),
             IconButton(
               onPressed: () => {
-                // Get.toNamed(Routes.NEWROUTINE),
+                Get.toNamed(AppRoutes.NEWUSERGOAL),
               },
               icon: const Icon(Icons.add),
               tooltip: translation.appGoalCreateGoalTitle.tr,

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
 import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
 
 class ExpenseTile extends StatelessWidget {
   ExpenseTile({super.key, required this.budget});
@@ -26,8 +27,8 @@ class ExpenseTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: AppLayout.getScreenWidth() * .43,
-        height: AppLayout.getHeight(200),
+        width: 42.w, //AppLayout.getScreenWidth() * .43,
+        height: AppLayout.getHeight(20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: AppColors.appLightRose,
@@ -62,7 +63,7 @@ class ExpenseTile extends StatelessWidget {
                     child: Text(
                       currency.format(budget.expenses),
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 20,
                         fontWeight: FontWeight.w900,
                         fontFamily:
                         GoogleFonts.roboto().fontFamily,

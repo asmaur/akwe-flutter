@@ -7,7 +7,7 @@ class BudgetService{
   final url = Endpoint.BUDGETURL;
 
   Future getMyBudget() async{
-    return await _baseService.get("${url}my-budget/");
+    return await _baseService.get("${url}/my-budget/");
   }
 
   Future updateMyBudget(Map<String, dynamic> budget) async{

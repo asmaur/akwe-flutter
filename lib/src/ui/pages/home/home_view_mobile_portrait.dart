@@ -36,7 +36,7 @@ class HomeViewMobilePortrait extends StatelessWidget {
                   child: Icon(
                     Icons.notifications_outlined,
                   ),
-                  label: Text("2"),
+                  label: Text("0"),
                 ),
               ),
             ),
@@ -59,7 +59,7 @@ class HomeViewMobilePortrait extends StatelessWidget {
           ]),
       drawer: AppDrawerMobile(),
       body: Obx(() => RefreshIndicator(
-        onRefresh: () => controller.refreshMyBudget(),
+        onRefresh: () => controller.testDio(),
         child: Padding(
           padding: EdgeInsets.all(8),
           child: SingleChildScrollView(

@@ -15,21 +15,21 @@ class TransactionService {
   }
 
   Future<Response> retrieve(String id) async{
-    return await _baseService.get("${Endpoint.TRANSACTIONURL}$id");
+    return await _baseService.get("${Endpoint.TRANSACTIONURL}/$id");
   }
 
   Future<Response> createGenericTransaction(Map<String, dynamic> data) async {
-    return await _baseService.post(Endpoint.TRANSACTIONURL, data: data);
+    return await _baseService.post("${Endpoint.TRANSACTIONURL}/", data: data);
   }
 
   Future<Response> createInvoiceTransaction(Map<String, dynamic> data) async {
-    return await _baseService.post("${Endpoint.TRANSACTIONURL}invoices/",
+    return await _baseService.post("${Endpoint.TRANSACTIONURL}/invoices/",
         data: data);
   }
 
   Future<Response> updateTransaction(Map<String, dynamic> data, String id) async {
     return await _baseService.put("${Endpoint.TRANSACTIONURL}/invoices/$id/",
-        data: data);
+        data: data,);
   }
 
   Future<Response> getTransactionItems(String id) async {

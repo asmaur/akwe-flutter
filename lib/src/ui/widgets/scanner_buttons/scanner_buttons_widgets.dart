@@ -25,13 +25,13 @@ class SwitchCameraButton extends StatelessWidget {
 
         switch (state.cameraDirection) {
           case CameraFacing.front:
-            icon = const Icon(Icons.camera_front);
+            icon = const Icon(Icons.camera_front, color: Colors.grey);
           case CameraFacing.back:
-            icon = const Icon(Icons.camera_rear);
+            icon = const Icon(Icons.camera_rear, color: Colors.grey);
         }
 
         return IconButton(
-          color: Colors.white,
+          // color: Colors.white,
           iconSize: 32.0,
           icon: icon,
           onPressed: () async {
@@ -60,9 +60,9 @@ class ToggleFlashlightButton extends StatelessWidget {
         switch (state.torchState) {
           case TorchState.auto:
             return IconButton(
-              color: Colors.white,
+              // color: Colors.white,
               iconSize: 32.0,
-              icon: const Icon(Icons.flash_auto),
+              icon: const Icon(Icons.flash_auto, color: Colors.grey),
               onPressed: () async {
                 await controller.toggleTorch();
               },
@@ -71,16 +71,16 @@ class ToggleFlashlightButton extends StatelessWidget {
             return IconButton(
               color: Colors.white,
               iconSize: 32.0,
-              icon: const Icon(Icons.flash_off),
+              icon: const Icon(Icons.flash_off, color: Colors.grey),
               onPressed: () async {
                 await controller.toggleTorch();
               },
             );
           case TorchState.on:
             return IconButton(
-              color: Colors.white,
+              // color: Colors.white,
               iconSize: 32.0,
-              icon: const Icon(Icons.flash_on),
+              icon: const Icon(Icons.flash_on, color: Colors.grey),
               onPressed: () async {
                 await controller.toggleTorch();
               },

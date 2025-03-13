@@ -4,6 +4,7 @@ import 'package:akwe/src/utils/app_color.dart';
 import 'package:akwe/src/utils/app_color_list.dart';
 import 'package:akwe/src/utils/app_icon.dart';
 import 'package:akwe/src/utils/app_icon_list.dart';
+import 'package:get/get.dart';
 
 var colorList = getAppColorList();
 var iconList = getAppIconList();
@@ -57,7 +58,7 @@ class AppCategory {
 
   String getNameIntl(Map<String, dynamic> json) {
     //AppLocalizations.of(context)!.localeName
-    String lang = Platform.localeName.substring(0, 2);
+    String? lang = Get.locale?.languageCode; //Platform.localeName.substring(0, 2);
     switch (lang) {
       case 'en':{
         return json['name_en'];

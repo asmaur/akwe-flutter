@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class SavingGoal extends StatelessWidget {
   const SavingGoal({super.key});
@@ -17,8 +18,8 @@ class SavingGoal extends StatelessWidget {
         child: InkWell(
           onTap: () {},
           child: Container(
-            width: AppLayout.getScreenWidth() * 0.95,
-            height: AppLayout.getHeight(100),
+            width: 95.w, //AppLayout.getScreenWidth() * 0.95,
+            height: AppLayout.getHeight(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

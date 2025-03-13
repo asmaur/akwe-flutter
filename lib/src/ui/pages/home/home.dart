@@ -12,11 +12,26 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return DeviceTypeLayout(
       mobile: OrientationLayout(
-          landscape: HomeViewMobileLandscape(),
-          portrait: HomeViewMobilePortrait(),
+        landscape: HomeViewMobileLandscape(),
+        portrait: HomeViewMobilePortrait(),
       ),
       tablet: SizedBox(),
       desktop: SizedBox(),
+      watch: Container(
+        child: Center(
+          child: Text("Watch, Not Implemented!"),
+        ),
+      ),
+        smallTV: Container(
+          child: Center(
+            child: Text("SmallTV, Not Implemented!"),
+          ),
+        ),
+        largeTV: Container(
+          child: Center(
+            child: Text("LargeTV, Not Implemented!"),
+          ),
+        )
     );
   }
 }

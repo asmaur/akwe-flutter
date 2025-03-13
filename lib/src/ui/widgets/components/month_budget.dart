@@ -6,6 +6,7 @@ import 'package:akwe/src/translations/translation_keys.dart' as translation;
 import 'package:get/get.dart';
 import 'package:in_date_utils/in_date_utils.dart';
 import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
 
 class MonthBudget extends StatelessWidget {
   MonthBudget({super.key, required this.budget});
@@ -39,8 +40,8 @@ class MonthBudget extends StatelessWidget {
           ),
         ),
         Container(
-          width: AppLayout.getScreenWidth() * 0.95,
-          height: AppLayout.getHeight(100),
+          width: 95.w, //AppLayout.getScreenWidth() * 0.95,
+          height: AppLayout.getHeight(10),
           child: Card(
             color: AppColors.appPurple,
             child: Row(
@@ -54,7 +55,7 @@ class MonthBudget extends StatelessWidget {
                       child: Text(
                         translation.appMonthBudgetTitle.trParams({
                           "monthName": DateFormat.MMMM(Get.locale?.languageCode)
-                              .format(budget.creationDate!),
+                              .format(budget.creationDate ?? DateTime.now()),
                         }),
                         style: TextStyle(
                           color: AppColors.appWhite,

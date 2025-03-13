@@ -6,7 +6,7 @@ class AccountService{
   final BaseService _baseService = BaseService();
 
   Future<Response> get() async{
-    return await _baseService.get(Endpoint.ACCOUNTURL);
+    return await _baseService.get("${Endpoint.ACCOUNTURL}/");
   }
 
   Future<Response> create(Map<String, dynamic> account) async{

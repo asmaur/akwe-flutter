@@ -50,4 +50,9 @@ class UserService {
     return await _baseService.put("${Endpoint.USERURL}/update-profile/", data: data);
   }
 
+  Future<Response> initializeUserWithEmailAndPassword(Map<String, dynamic> data) async{
+    debugPrint(":::::::CALLING NEW USER INITIALIZATION:::::::::::::");
+    return await _baseService.post("${Endpoint.USERURL}/register/", data: data);
+  }
+
 }

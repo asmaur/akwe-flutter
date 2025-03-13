@@ -4,6 +4,7 @@ import 'package:akwe/src/models/categories/app_category.dart';
 import 'package:akwe/src/ui/pages/goal_new/new_goal_page_controller.dart';
 import 'package:akwe/src/ui/shared/color_tile.dart';
 import 'package:akwe/src/utils/app_icon_list.dart';
+import 'package:akwe/src/wanuicons/wanu_fonts_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
 import 'package:flutter/services.dart';

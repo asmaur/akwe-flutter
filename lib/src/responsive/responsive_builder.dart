@@ -1,5 +1,6 @@
 import 'package:akwe/src/responsive/sizing_information.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'form_factor.dart';
 
@@ -16,7 +17,7 @@ class ResponsiveBuilder extends StatelessWidget {
     return LayoutBuilder(builder: (context, boxConstraints) {
       var mediaQuery = MediaQuery.of(context);
       var sizingInformation = SizingInformation(
-        deviceScreenType: getDeviceFormFactor(mediaQuery),
+        deviceScreenType: getDeviceFormFactor(mediaQuery, boxConstraints),
         screenSize: mediaQuery.size,
         localWidgetSize: Size(boxConstraints.maxWidth, boxConstraints.maxHeight),
       );

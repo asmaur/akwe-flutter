@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:akwe/src/models/account_type.dart';
 import 'package:akwe/src/models/banking.dart';
@@ -9,6 +10,7 @@ import 'package:akwe/src/utils/app_icon.dart';
 import 'package:akwe/src/utils/app_icon_list.dart';
 import 'package:akwe/src/utils/instituitions_list.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'app_account_history.dart';
 
@@ -115,8 +117,10 @@ class AppAccount{
   }
 
   String getNameIntl(Map<String, dynamic> json) {
+    // print("LANGUAGE: ${Get.locale?.languageCode}");
     //AppLocalizations.of(context)!.localeName
-    String lang = Platform.localeName.substring(0, 2);
+    String? lang = Get.locale?.languageCode; //Platform.localeName.substring(0, 2);
+
     switch (lang) {
       case 'en':{
         return json['name_en'];

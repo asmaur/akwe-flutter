@@ -6,6 +6,7 @@ import 'package:akwe/src/ui/shared/dialog_helper.dart';
 import 'package:akwe/src/utils/status_code.dart';
 import 'package:get/get.dart';
 import 'package:dio/dio.dart' as dio;
+import 'package:dio/dio.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
 
 class HomeController extends GetxController{
@@ -62,11 +63,20 @@ class HomeController extends GetxController{
           positiveBalance.value = true;
         }
       }
+      // await Dio().get('https://google.com/test');
     } on dio.DioException catch (e) {
       final errorMessage = DioExceptions.fromDioError(e);
       DialogHelper.showErrorDialog(
           title: translation.appMessageError.tr,
           description: errorMessage.message);
+    }
+  }
+
+  testDio() async {
+    try {
+      await Dio().get('https://google.com/test');
+    } catch (e) {
+      print('catch: $e');
     }
   }
 

@@ -10,7 +10,7 @@ class Pt {
         translation.bottomBarTransferText: "Transferência",
         translation.appLoginButtonText: "Entrar",
         translation.appSignUpButtonText: "Registrar",
-        translation.appMainSloganText: "Construindo sua liberdade",
+        translation.appMainSloganText: "Poupar começa pelo controle.",
         translation.appContinueWithGoogle: "Continue com Google",
         translation.appContinueWithFacebook: "Continue com Facebook",
         translation.appContinueWithTwitter: "Continue com Twitter",

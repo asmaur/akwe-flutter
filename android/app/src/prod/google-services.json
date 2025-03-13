@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "608266063758",
+    "project_id": "akwe-prod",
+    "storage_bucket": "akwe-prod.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608266063758:android:a150f7d8866479fe591edf",
+        "android_client_info": {
+          "package_name": "com.wanubit.akwe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKxen04fYyvIeWaS48ykQbwXKX_fQHlQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

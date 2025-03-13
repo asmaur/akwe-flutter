@@ -1,4 +1,5 @@
 
+import 'package:akwe/src/wanuicons/wanu_fonts_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -96,6 +97,10 @@ List<AppIcon> getAppIconList(){
     AppIcon(900109, FontAwesomeIcons.umbrellaBeach),
     AppIcon(900201, FontAwesomeIcons.gift),
     AppIcon(900202, FontAwesomeIcons.piggyBank),
+    AppIcon(900203, FontAwesomeIcons.uber),
+    AppIcon(900204, WanuIcons.icon_99_app),
+    AppIcon(900205, WanuIcons.ifood_43),
+    AppIcon(900206, FontAwesomeIcons.moneyBillTransfer),
 
   ];
 

@@ -3,8 +3,8 @@ part of 'app_pages.dart';
 abstract class AppRoutes {
   static const  String HOME = "/";
   static const String WELCOME = "/welcome";
-  static const String SIGNIN = "/login";
-  static const String SIGNUP = "/signup";
+  static const String LOGIN = "/login";
+  static const String REGISTER = "/register";
   static const String LOGINWITHEMAIL = "/login-email";
   static const String REGISTERWITHEMAIL = "/register-email";
   static const String USERDATA = "/user-data";

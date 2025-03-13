@@ -43,8 +43,7 @@ class TransactionPageController extends GetxController{
       List<dynamic> items;
 
       var response = await _service.getCurrentMonthTransaction();
-      items = response.data;
-
+      items = response.data ?? [];
       if (items.isNotEmpty) {
         transactions.clear();
         for (var item in items) {

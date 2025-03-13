@@ -1,11 +1,13 @@
 import 'package:akwe/src/constants/app_colors.dart';
 import 'package:akwe/src/constants/app_layout.dart';
 import 'package:akwe/src/models/budgets/budget.dart';
+import 'package:akwe/src/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
 
 class BalanceCard extends StatelessWidget {
   BalanceCard({super.key, required this.budget});
@@ -28,14 +30,14 @@ class BalanceCard extends StatelessWidget {
         color: AppColors.appDarkGreen,
         elevation: 5,
         child: Container(
-          width: AppLayout.getScreenWidth() * 0.95,
-          height: AppLayout.getHeight(200),
+          width: 95.w,
+          height: AppLayout.getHeight(25),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 // color: Colors.purpleAccent,
-                width: (AppLayout.getScreenWidth() * 0.95) * 0.6,
+                //width: 10.w, //(AppLayout.getScreenWidth() * 0.7),
                 child: Padding(
                   padding: const EdgeInsets.only(
                       top: 30.0, left: 5, right: 5),
@@ -49,7 +51,7 @@ class BalanceCard extends StatelessWidget {
                             Text(
                               translation.appHomeMainBudgetText.tr,
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.w300,
                                 color: AppColors.appGray,
                               ),
@@ -61,7 +63,7 @@ class BalanceCard extends StatelessWidget {
                               child: Text(
                                 currency.format(budget.balance),
                                 style: TextStyle(
-                                  fontSize: 29,
+                                  fontSize: 27.sp,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.appWhite,
                                   fontFamily: GoogleFonts.raleway()
@@ -73,21 +75,43 @@ class BalanceCard extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(bottom: 10),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            translation.userBudgetDetailTitle.tr,
+                        margin: EdgeInsets.only(bottom: 15),
+                        child: budget.initialBalance ==
+                              0.0
+                              ? ElevatedButton(
+                            onPressed: () {
+                              Get.toNamed(AppRoutes.NEWBUDGET,
+                                  arguments: budget.id!);
+                            },
+                            child: Text(translation
+                                .userBudgetCreateButtonText
+                                .tr),
+                          )
+                              : ElevatedButton(
+                            onPressed: () {
+                              Get.toNamed(AppRoutes.BUDGET,
+                                  arguments: budget.id!);
+                            },
+                            child: Text(translation
+                                .userBudgetViewHistoryButtonText
+                                .tr),
                           ),
-                        ),
-                      )
+                        )
+                        // ElevatedButton(
+                        //   onPressed: () {
+                        //   },
+                        //   child: Text(
+                        //     translation.userBudgetDetailTitle.tr,
+                        //   ),
+                        // ),
+
                     ],
                   ),
                 ),
               ),
               Container(
                 // color: Colors.lightBlue,
-                width: (AppLayout.getScreenWidth() * 0.95) * 0.35,
+                width: 20.w,//(AppLayout.getScreenWidth() * 0.5),
                 child: Column(
                   children: [
                     Padding(

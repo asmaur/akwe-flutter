@@ -1,5 +1,8 @@
 enum DeviceFormFactor{
   Mobile,
   Tablet,
-  Desktop
+  Desktop,
+  Watch,
+  SmallTV,
+  LargeTV
 }

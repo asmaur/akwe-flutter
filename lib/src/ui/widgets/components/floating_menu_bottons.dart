@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:get/get.dart';
 import 'package:akwe/src/translations/translation_keys.dart' as translation;
+import 'package:sizer/sizer.dart';
 
 class FloatingMenuBottons extends StatelessWidget {
   FloatingMenuBottons({super.key});
@@ -22,7 +23,7 @@ class FloatingMenuBottons extends StatelessWidget {
       openButtonBuilder: RotateFloatingActionButtonBuilder(
         child: Icon(
           Icons.add_outlined,
-          size: AppLayout.getHeight(40),
+          size: 24.sp,
         ),
         fabSize: ExpandableFabSize.regular,
         foregroundColor: AppColors.appWhite,
@@ -39,7 +40,7 @@ class FloatingMenuBottons extends StatelessWidget {
                 shape: const CircleBorder(),
                 child: Icon(
                   Icons.close_outlined,
-                  size: AppLayout.getHeight(40),
+                  size: 24.sp,
                   color: AppColors.appWhite,
                 ),
                 backgroundColor: AppColors.appDarkGreen,
@@ -84,6 +85,7 @@ class FloatingMenuBottons extends StatelessWidget {
                 if (state != null) {
                   state.toggle();
                 }
+                Get.toNamed(AppRoutes.NEWTRANSACTION, arguments: {"income": true});
               },
               backgroundColor: AppColors.appDarkGreen,
               child: Icon(Icons.trending_up_outlined, color: AppColors.appWhite,),
@@ -104,6 +106,7 @@ class FloatingMenuBottons extends StatelessWidget {
                 if (state != null) {
                   state.toggle();
                 }
+                Get.toNamed(AppRoutes.NEWTRANSACTION, arguments: {"income": false});
               },
               backgroundColor: AppColors.appRose,
               child: Icon(Icons.trending_down_outlined),

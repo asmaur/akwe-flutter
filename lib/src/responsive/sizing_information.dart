@@ -1,7 +1,9 @@
 import 'package:akwe/src/responsive/device_form_factor.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SizingInformation {
+  // final DeviceFormFactor deviceScreenType;
   final DeviceFormFactor deviceScreenType;
   final Size screenSize;
   final Size localWidgetSize;

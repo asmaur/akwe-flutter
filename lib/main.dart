@@ -1,12 +1,49 @@
 import 'package:akwe/src/routes/app_pages.dart';
-import 'package:akwe/src/theme/theme.dart';
+import 'package:akwe/src/theme/app_theme.dart';
 import 'package:akwe/src/translations/app_translation.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:month_year_picker/month_year_picker.dart';
+import 'package:sizer/sizer.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'firebase_options.dev.dart';
+import 'src/globals/app_authentication_service.dart';
+import 'src/globals/network_status_service.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  await initServices();
+
+  runApp(
+    DevicePreview(
+      enabled: true,
+      tools: const [
+        ...DevicePreview.defaultTools,
+      ],
+      builder: (context) => const MyApp(),
+    ),
+  );
+  // runApp(const MyApp());
+}
+
+Future<void> initServices() async {
+  // correction
+  print('starting services ...');
+
+  /// Here is where you put get_storage, hive, shared_pref initialization.
+  /// or moor connection, or whatever that's async.
+  await GetStorage.init("store");
+  await Get.putAsync(() => AppAuthenticationService().init(), permanent: true);
+  await Get.putAsync(() => NetworkStatusService().init(), permanent: true);
+  print('All services started...');
 }
 
 class MyApp extends StatelessWidget {
@@ -15,32 +52,32 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      navigatorKey: Get.key,
-      navigatorObservers: const [],
-      translationsKeys: AppTranslation.translationKeys,
-      locale: Get.deviceLocale,
-      debugShowCheckedModeBanner: true,
-      localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        // MonthYearPickerLocalizations.delegate,
-      ],
-      supportedLocales: const <Locale>[
-        Locale('en'),
-        Locale('fr'),
-        Locale('zh')
-      ],
-      fallbackLocale: const Locale('pt', 'BR'),
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
-
-      initialRoute: AppRoutes.HOME,
-      getPages: AppPages.pages,
-    );
-
+    return Sizer(builder: (context, orientation, deviceType) {
+      return GetMaterialApp(
+        navigatorKey: Get.key,
+        navigatorObservers: const [],
+        translationsKeys: AppTranslation.translationKeys,
+        locale: Get.deviceLocale,
+        debugShowCheckedModeBanner: true,
+        localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          MonthYearPickerLocalizations.delegate,
+        ],
+        supportedLocales: const <Locale>[
+          Locale('en'),
+          Locale('fr'),
+          Locale('zh')
+        ],
+        fallbackLocale: const Locale('pt', 'BR'),
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        initialRoute: AppRoutes.HOME,
+        getPages: AppPages.pages,
+      );
+    });
   }
 }
 //

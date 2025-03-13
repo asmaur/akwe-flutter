@@ -151,7 +151,7 @@ class AppDrawerMobile extends StatelessWidget {
           iconData: Icons.money_outlined,
           label: translation.appDrawerBudgetText.tr,
           selected: false,
-          onTap: () => {Get.toNamed(AppRoutes.BUDGET)},
+          onTap: () => {Get.toNamed(AppRoutes.BUDGETLIST)},
         ),
         DrawerNavigationItem(
           iconData: Icons.sync_alt_outlined,

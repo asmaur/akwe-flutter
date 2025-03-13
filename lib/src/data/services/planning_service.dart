@@ -19,11 +19,11 @@ class PlanningService{
     return _baseService.post(Endpoint.ROUTINES, data: routine);
   }
 
-  Future updateRoutine(int id, dynamic routine){
+  Future update(String id, dynamic routine){
     return _baseService.put("${Endpoint.ROUTINES}$id/", data: routine);
   }
 
-  Future destroyRoutine(int id){
+  Future delete(String id){
     return _baseService.delete("${Endpoint.ROUTINES}$id/");
   }
 
@@ -33,7 +33,7 @@ class PlanningService{
     );
   }
 
-  addToCalendar(int? id) async{
+  addToCalendar(String? id) async{
     return _baseService.put("${Endpoint.ROUTINES}$id/");
   }
 
